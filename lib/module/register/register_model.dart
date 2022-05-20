@@ -5,6 +5,8 @@ class _RegisterModel extends TTChangeNotifier<_RegisterView> {
   final TextEditingController phoneController;
   final TextEditingController passwordController;
   final TextEditingController repasswordController;
+  final formKey = GlobalKey<FormState>();
+
   bool enabled = false;
   _RegisterModel()
       : nameController = TextEditingController(),
@@ -29,6 +31,10 @@ class _RegisterModel extends TTChangeNotifier<_RegisterView> {
   }
 
   void onRegisterPressed() {
+    bool isValid = formKey.currentState?.validate() ?? false;
+    if (!isValid) {
+      return;
+    }
     Navigator.of(context!).pushReplacement(
       MaterialPageRoute(
         builder: (_) => createOtp(otpFlow: OtpFlow.register),

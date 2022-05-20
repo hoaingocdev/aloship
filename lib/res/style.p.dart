@@ -27,4 +27,14 @@ class St {
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle body12500 = const TextStyle(
+    fontFamily: Font.lexend,
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle body12400 = const TextStyle(
+    fontFamily: Font.lexend,
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
 }

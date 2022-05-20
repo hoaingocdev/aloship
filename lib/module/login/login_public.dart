@@ -1,5 +1,6 @@
 library login;
 
+import 'package:aloship/module/home/home_public.dart';
 import 'package:aloship/module/register/register_public.dart';
 import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';

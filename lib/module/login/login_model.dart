@@ -3,6 +3,8 @@ part of login;
 class _LoginModel extends TTChangeNotifier<_LoginView> {
   final TextEditingController phoneController;
   final TextEditingController passwordController;
+  final formKey = GlobalKey<FormState>();
+
   bool enabled = false;
   _LoginModel()
       : phoneController = TextEditingController(),
@@ -19,7 +21,17 @@ class _LoginModel extends TTChangeNotifier<_LoginView> {
     notifyListeners();
   }
 
-  void onLoginPressed() {}
+  void onLoginPressed() {
+    bool isValid = formKey.currentState?.validate() ?? false;
+    if (!isValid) {
+      return;
+    }
+    Navigator.of(context!).push(
+      MaterialPageRoute(
+        builder: (_) => createHome(),
+      ),
+    );
+  }
 
   void onRegisterPressed() {
     Navigator.of(context!).push(

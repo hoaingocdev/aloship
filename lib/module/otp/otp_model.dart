@@ -5,6 +5,8 @@ enum OtpFlow { register, forgotPassword }
 class _OtpModel extends TTChangeNotifier<_OtpView> {
   final OtpFlow otpFlow;
   final TextEditingController otpController;
+  final formKey = GlobalKey<FormState>();
+
   bool enable = false;
   _OtpModel(this.otpFlow) : otpController = TextEditingController();
 
@@ -25,6 +27,10 @@ class _OtpModel extends TTChangeNotifier<_OtpView> {
 
   void onCompletePressed() {
     if (otpFlow == OtpFlow.forgotPassword) {
+      bool isValid = formKey.currentState?.validate() ?? false;
+      if (!isValid) {
+        return;
+      }
       Navigator.of(context!).pushReplacement(
         MaterialPageRoute(
           builder: (_) => createNewpassword(),
