@@ -1,9 +1,12 @@
 part of otp;
 
+enum OtpFlow { register, forgotPassword }
+
 class _OtpModel extends TTChangeNotifier<_OtpView> {
+  final OtpFlow otpFlow;
   final TextEditingController otpController;
   bool enable = false;
-  _OtpModel() : otpController = TextEditingController();
+  _OtpModel(this.otpFlow) : otpController = TextEditingController();
 
   @override
   void dispose() {
@@ -21,10 +24,19 @@ class _OtpModel extends TTChangeNotifier<_OtpView> {
   }
 
   void onCompletePressed() {
-    Navigator.of(context!).push(
-      MaterialPageRoute(
-        builder: (_) => createNewpassword(),
-      ),
-    );
+    if (otpFlow == OtpFlow.forgotPassword) {
+      Navigator.of(context!).pushReplacement(
+        MaterialPageRoute(
+          builder: (_) => createNewpassword(),
+        ),
+      );
+    } else {
+      Navigator.of(context!).pushAndRemoveUntil(
+        MaterialPageRoute(
+          builder: (_) => createHome(),
+        ),
+        (r) => false,
+      );
+    }
   }
 }

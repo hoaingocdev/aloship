@@ -16,6 +16,6 @@ part 'forgot_password_state.dart';
 ChangeNotifierProvider<ForgotPasswordModel> createForgotPassword() {
   return ChangeNotifierProvider<ForgotPasswordModel>(
     create: (_) => ForgotPasswordModel(),
-    child: ForgotPasswordView(),
+    child: const ForgotPasswordView(),
   );
 }

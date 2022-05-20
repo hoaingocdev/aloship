@@ -4,6 +4,7 @@ class ForgotPasswordModel extends TTChangeNotifier<ForgotPasswordView> {
   final TextEditingController phoneController;
   ForgotPasswordModel() : phoneController = TextEditingController();
   bool enable = false;
+  @override
   void dispose() {
     phoneController.dispose();
     super.dispose();
@@ -19,9 +20,9 @@ class ForgotPasswordModel extends TTChangeNotifier<ForgotPasswordView> {
   }
 
   void onContinuePressed() {
-    Navigator.of(context!).push(
+    Navigator.of(context!).pushReplacement(
       MaterialPageRoute(
-        builder: (_) => createOtp(),
+        builder: (_) => createOtp(otpFlow: OtpFlow.forgotPassword),
       ),
     );
   }

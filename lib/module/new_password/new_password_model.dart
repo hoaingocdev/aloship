@@ -7,6 +7,7 @@ class _NewPasswordModel extends TTChangeNotifier<_NewPasswordView> {
   _NewPasswordModel()
       : passwordController = TextEditingController(),
         repasswordController = TextEditingController();
+  @override
   void dispose() {
     passwordController.dispose();
     repasswordController.dispose();
@@ -22,5 +23,10 @@ class _NewPasswordModel extends TTChangeNotifier<_NewPasswordView> {
     Navigator.of(context!).pop();
   }
 
-  void onCompletedPressed() {}
+  void onCompletedPressed() {
+    Navigator.of(context!).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (_) => createLogin()),
+      (r) => false,
+    );
+  }
 }

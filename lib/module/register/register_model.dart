@@ -29,9 +29,9 @@ class _RegisterModel extends TTChangeNotifier<_RegisterView> {
   }
 
   void onRegisterPressed() {
-    Navigator.of(context!).push(
+    Navigator.of(context!).pushReplacement(
       MaterialPageRoute(
-        builder: (_) => createOtp(),
+        builder: (_) => createOtp(otpFlow: OtpFlow.register),
       ),
     );
   }

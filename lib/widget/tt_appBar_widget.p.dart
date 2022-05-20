@@ -1,6 +1,4 @@
-import 'package:aloship/res/color.p.dart';
 import 'package:aloship/res/res.dart';
-import 'package:aloship/res/style.p.dart';
 import 'package:flutter/material.dart';
 
 class TTAppBar {

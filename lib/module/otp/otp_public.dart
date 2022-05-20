@@ -1,6 +1,6 @@
 library otp;
 
-import 'package:aloship/module/newpassword/newpassword_public.dart';
+import 'package:aloship/module/module.dart';
 import 'package:aloship/res/style.p.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,9 +13,9 @@ part 'otp_view.dart';
 part 'otp_model.dart';
 part 'otp_state.dart';
 
-ChangeNotifierProvider<_OtpModel> createOtp() {
+ChangeNotifierProvider<_OtpModel> createOtp({required OtpFlow otpFlow}) {
   return ChangeNotifierProvider<_OtpModel>(
-    create: (_) => _OtpModel(),
+    create: (_) => _OtpModel(otpFlow),
     child: _OtpView(),
   );
 }
