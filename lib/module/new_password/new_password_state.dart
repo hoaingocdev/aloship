@@ -1,8 +1,8 @@
 part of newpassword;
 
-class _NewpasswordViewState extends TTState<_NewpasswordModel, _NewpasswordView> {
+class _NewPasswordViewState extends TTState<_NewPasswordModel, _NewPasswordView> {
   @override
-  Widget buildWithModel(BuildContext context, _NewpasswordModel model) {
+  Widget buildWithModel(BuildContext context, _NewPasswordModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
         title: 'Quên mật khẩu',

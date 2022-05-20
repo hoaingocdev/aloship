@@ -1,10 +1,10 @@
 part of newpassword;
 
-class _NewpasswordModel extends TTChangeNotifier<_NewpasswordView> {
+class _NewPasswordModel extends TTChangeNotifier<_NewPasswordView> {
   final TextEditingController passwordController;
   final TextEditingController repasswordController;
   bool enable = false;
-  _NewpasswordModel()
+  _NewPasswordModel()
       : passwordController = TextEditingController(),
         repasswordController = TextEditingController();
   void dispose() {

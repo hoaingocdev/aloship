@@ -1,8 +1,8 @@
 part of _forgot_password;
 
-class _ForgotPasswordModel extends TTChangeNotifier<_ForgotPasswordView> {
+class ForgotPasswordModel extends TTChangeNotifier<ForgotPasswordView> {
   final TextEditingController phoneController;
-  _ForgotPasswordModel() : phoneController = TextEditingController();
+  ForgotPasswordModel() : phoneController = TextEditingController();
   bool enable = false;
   void dispose() {
     phoneController.dispose();

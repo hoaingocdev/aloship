@@ -1,8 +1,8 @@
 part of _forgot_password;
 
-class _ForgotPasswordViewState extends TTState<_ForgotPasswordModel, _ForgotPasswordView> {
+class ForgotPasswordViewState extends TTState<ForgotPasswordModel, ForgotPasswordView> {
   @override
-  Widget buildWithModel(BuildContext context, _ForgotPasswordModel model) {
+  Widget buildWithModel(BuildContext context, ForgotPasswordModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
         title: 'Quên mật khẩu',

@@ -105,7 +105,7 @@ class _LoginViewState extends TTState<_LoginModel, _LoginView> {
                     Text(
                       'Version: 1.0.0',
                       style: St.body14400.copyWith(color: Cl.black),
-                    )
+                    ),
                   ],
                 ),
               ),
