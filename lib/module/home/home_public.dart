@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aloship/widget/widget.dart';
 
+import '../module.dart';
+
 part 'home_view.dart';
 part 'home_model.dart';
 part 'home_state.dart';

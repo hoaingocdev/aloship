@@ -10,7 +10,17 @@ class _HomeViewState extends TTState<_HomeModel, _HomeView> {
   }
 
   Widget buildBody(_HomeModel model) {
-    return SizedBox();
+    switch (model.pageIndex) {
+      case 0:
+        return createHomeContent();
+      case 1:
+        return createDiscount();
+      case 2:
+        return createNotification();
+
+      default:
+        return const SizedBox();
+    }
   }
 
   Widget buildBottom(_HomeModel model) {
