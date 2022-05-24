@@ -1,5 +1,7 @@
 library discount;
 
+import 'package:aloship/model/discount_info.p.dart';
+import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aloship/widget/widget.dart';

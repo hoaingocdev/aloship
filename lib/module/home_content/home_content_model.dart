@@ -6,7 +6,7 @@ class _HomeContentModel extends TTChangeNotifier<_HomeContentView> {
     _initData();
   }
   void _initData() {
-    final lsDiscount = List.generate(100, (index) {
+    final lsDiscount = List.generate(10, (index) {
       return DiscountInfo.from({
         'imageUrl': 'https://st.quantrimang.com/photos/image/2021/09/23/AVT-Chibi-10.jpg',
         'title': 'title$index',

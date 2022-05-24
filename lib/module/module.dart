@@ -2,6 +2,7 @@
 /// WARNING: THIS FILE IS GENERATE FILE. SHOULDN'T EDIT THIS FILE.
 ///---------------------------------------------------------------
 
+export './contact/contact_public.dart';
 export './discount/discount_public.dart';
 export './forgot_password/forgot_password_public.dart';
 export './home/home_public.dart';

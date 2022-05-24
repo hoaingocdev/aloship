@@ -7,6 +7,7 @@ class _RegisterViewState extends TTState<_RegisterModel, _RegisterView> {
       appBar: TTAppBar.create(
         title: 'Đăng ký',
         onBackPressed: model.onBackPressed,
+        image: Id.ic_arrow_back,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),

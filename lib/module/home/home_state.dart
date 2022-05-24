@@ -17,7 +17,6 @@ class _HomeViewState extends TTState<_HomeModel, _HomeView> {
         return createDiscount();
       case 2:
         return createNotification();
-
       default:
         return const SizedBox();
     }

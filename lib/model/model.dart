@@ -3,3 +3,4 @@
 ///---------------------------------------------------------------
 
 export './discount_info.p.dart';
+export './notification_info.p.dart';

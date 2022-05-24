@@ -1,6 +1,7 @@
 library register;
 
 import 'package:aloship/module/otp/otp_public.dart';
+import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
