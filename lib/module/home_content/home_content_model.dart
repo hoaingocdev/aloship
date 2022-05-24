@@ -16,4 +16,14 @@ class _HomeContentModel extends TTChangeNotifier<_HomeContentView> {
     });
     discounts.addAll(lsDiscount);
   }
+
+  void onDeliveryPressed() {
+    Navigator.of(context!).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return createDelivery();
+        },
+      ),
+    );
+  }
 }

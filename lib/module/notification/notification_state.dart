@@ -12,13 +12,17 @@ class _NotificationViewState extends TTState<_NotificationModel, _NotificationVi
           Image.asset(Id.ic_menu_left),
         ],
       ),
-      body: ListView.builder(
-        itemCount: 10,
+      body: ListView.separated(
+        separatorBuilder: (context, i) => Container(
+          margin: const EdgeInsets.symmetric(horizontal: 15),
+          height: 1,
+          color: Cl.clD8D9DB,
+        ),
+        itemCount: model.notifications.length,
         itemBuilder: (_, i) {
           return buildNotification(
             notificationInfo: model.notifications[i],
             onPressed: () => model.onNotificationItem(i),
-            isSelected: i == model.notificationIndex,
           );
         },
       ),
@@ -28,12 +32,11 @@ class _NotificationViewState extends TTState<_NotificationModel, _NotificationVi
   Widget buildNotification({
     required NotificationInfo notificationInfo,
     VoidCallback? onPressed,
-    bool isSelected = false,
   }) {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        color: isSelected ? Cl.cl021EAE0D.withOpacity(0.05) : Cl.white,
+        color: notificationInfo.isRead ? Cl.white : Cl.cl021EAE0D.withOpacity(0.05),
         height: 91,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,13 +77,6 @@ class _NotificationViewState extends TTState<_NotificationModel, _NotificationVi
               padding: const EdgeInsets.only(left: 43),
               child: Text(notificationInfo.time),
             ),
-            const SizedBox(height: 11),
-            Container(
-              width: double.infinity,
-              // padding: EdgeInsets.symmetric(horizontal: 15),
-              height: 1,
-              color: Cl.clD8D9DB,
-            )
           ],
         ),
       ),

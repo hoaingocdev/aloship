@@ -2,7 +2,6 @@ part of notification;
 
 class _NotificationModel extends TTChangeNotifier<_NotificationView> {
   final notifications = <NotificationInfo>[];
-  int notificationIndex = -1;
   _NotificationModel() {
     _initData();
   }
@@ -12,6 +11,7 @@ class _NotificationModel extends TTChangeNotifier<_NotificationView> {
         'title': 'title$index',
         'text': 'text$index',
         'time': 'time$index',
+        'isRead': false,
       });
     });
     notifications.addAll(lsNotification);
@@ -20,9 +20,7 @@ class _NotificationModel extends TTChangeNotifier<_NotificationView> {
   void onBackPressed() {}
 
   void onNotificationItem(int index) {
-    if (notificationIndex != index) {
-      notificationIndex = index;
-      notifyListeners();
-    }
+    notifications[index].read();
+    notifyListeners();
   }
 }

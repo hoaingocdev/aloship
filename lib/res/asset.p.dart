@@ -12,8 +12,11 @@ class Id {
   static const String ic_background_home = 'assets/images/ic_background_home.png';
   static const String ic_bag = 'assets/images/ic_bag.png';
   static const String ic_bell = 'assets/images/ic_bell.png';
+  static const String ic_destination = 'assets/images/ic_destination.png';
+  static const String ic_destinations = 'assets/images/ic_destinations.png';
   static const String ic_endow = 'assets/images/ic_endow.png';
   static const String ic_home = 'assets/images/ic_home.png';
+  static const String ic_location = 'assets/images/ic_location.png';
   static const String ic_menu_left = 'assets/images/ic_menu-left.png';
   static const String ic_motor_scooter = 'assets/images/ic_motor_scooter.png';
   static const String ic_plus = 'assets/images/ic_plus.png';

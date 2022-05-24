@@ -234,32 +234,35 @@ class _HomeContentViewState extends TTState<_HomeContentModel, _HomeContentView>
     required Color borderColor,
     required String imageAsset,
   }) {
-    return Container(
-      height: 114,
-      width: 80,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Cl.white,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            height: 56,
-            width: 56,
-            margin: const EdgeInsets.only(top: 10),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: borderColor,
+    return InkWell(
+      onTap: model.onDeliveryPressed,
+      child: Container(
+        height: 114,
+        width: 80,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Cl.white,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              height: 56,
+              width: 56,
+              margin: const EdgeInsets.only(top: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: borderColor,
+              ),
+              child: Image.asset(imageAsset),
             ),
-            child: Image.asset(imageAsset),
-          ),
-          const SizedBox(height: 14),
-          Text(
-            text,
-            style: St.body14400.copyWith(color: Cl.black),
-          ),
-        ],
+            const SizedBox(height: 14),
+            Text(
+              text,
+              style: St.body14400.copyWith(color: Cl.black),
+            ),
+          ],
+        ),
       ),
     );
   }

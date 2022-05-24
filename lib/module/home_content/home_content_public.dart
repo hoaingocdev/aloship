@@ -1,6 +1,7 @@
 library home_content;
 
 import 'package:aloship/model/model.dart';
+import 'package:aloship/module/delivery/delivery_public.dart';
 import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
