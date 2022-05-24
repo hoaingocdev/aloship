@@ -11,6 +11,7 @@ class TTAppBar {
   }) {
     return AppBar(
       backgroundColor: Cl.white,
+      centerTitle: true,
       title: Text(
         title ?? '',
         style: St.body18500.copyWith(color: Cl.black),

@@ -1,5 +1,6 @@
 library delivery;
 
+import 'package:aloship/module/departure_point/departure_point_public.dart';
 import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

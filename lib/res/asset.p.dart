@@ -17,6 +17,7 @@ class Id {
   static const String ic_endow = 'assets/images/ic_endow.png';
   static const String ic_home = 'assets/images/ic_home.png';
   static const String ic_location = 'assets/images/ic_location.png';
+  static const String ic_location1 = 'assets/images/ic_location1.png';
   static const String ic_menu_left = 'assets/images/ic_menu-left.png';
   static const String ic_motor_scooter = 'assets/images/ic_motor_scooter.png';
   static const String ic_plus = 'assets/images/ic_plus.png';

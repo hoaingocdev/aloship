@@ -122,7 +122,10 @@ class _DeliveryViewState extends TTState<_DeliveryModel, _DeliveryView> {
                 padding: const EdgeInsets.only(top: 24),
                 child: Row(
                   children: [
-                    Image.asset(Id.ic_location),
+                    InkWell(
+                      onTap: model.onDeparturePoint,
+                      child: Image.asset(Id.ic_location),
+                    ),
                     const SizedBox(width: 17),
                     Text(
                       'Vị trí của bạn',
