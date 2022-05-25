@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aloship/widget/widget.dart';
 
+import '../destination/destination_public.dart';
+
 part 'delivery_view.dart';
 part 'delivery_model.dart';
 part 'delivery_state.dart';

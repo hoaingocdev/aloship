@@ -1,11 +1,11 @@
-part of departure_point;
+part of destination;
 
-class _DeparturePointModel extends TTChangeNotifier<_DeparturePointView> {
+class _DestinationModel extends TTChangeNotifier<_DestinationView> {
   final addresses = <AddressInfo>[];
   late TextEditingController controller;
   final isShowClear = ValueNotifier(false);
 
-  _DeparturePointModel() {
+  _DestinationModel() {
     controller = TextEditingController();
   }
   @override
@@ -14,17 +14,12 @@ class _DeparturePointModel extends TTChangeNotifier<_DeparturePointView> {
     super.dispose();
   }
 
-  void onBackPressed() {
-    Navigator.of(context!).pop();
-  }
-
-  void onSearchChanged(String value) {
+  void onSearchChange(String value) {
     if (value.isEmpty) {
       isShowClear.value = false;
       addresses.clear();
     } else {
       isShowClear.value = true;
-
       _searchAddress();
     }
     notifyListeners();
@@ -39,9 +34,13 @@ class _DeparturePointModel extends TTChangeNotifier<_DeparturePointView> {
     addresses.addAll(lsAddress);
   }
 
-  void onClear() {
+  void onCleared() {
     controller.clear();
     isShowClear.value = false;
     notifyListeners();
+  }
+
+  void onBackPressed() {
+    Navigator.of(context!).pop();
   }
 }

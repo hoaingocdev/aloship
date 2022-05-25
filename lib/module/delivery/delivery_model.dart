@@ -8,4 +8,14 @@ class _DeliveryModel extends TTChangeNotifier<_DeliveryView> {
       }),
     );
   }
+
+  void onDestinationPressed() {
+    Navigator.of(context!).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return createDestination();
+        },
+      ),
+    );
+  }
 }

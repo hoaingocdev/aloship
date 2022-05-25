@@ -1,15 +1,19 @@
+import 'package:aloship/model/model.dart';
 import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';
 
-class TtLocationWidget extends StatefulWidget {
+class TTLocationWidget extends StatelessWidget {
   final String? title;
+  final AddressInfo? addressInfo;
+  final String? addressText;
 
-  const TtLocationWidget({Key? key, this.title}) : super(key: key);
-  @override
-  _TtLocationWidgetState createState() => _TtLocationWidgetState();
-}
+  const TTLocationWidget({
+    Key? key,
+    this.title,
+    this.addressInfo,
+    this.addressText,
+  }) : super(key: key);
 
-class _TtLocationWidgetState extends State<TtLocationWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,13 +23,13 @@ class _TtLocationWidgetState extends State<TtLocationWidget> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (widget.title != null)
+            if (title != null)
               Text(
-                widget.title!,
+                title!,
                 style: St.body14400.copyWith(color: Cl.cl777777),
               ),
             Text(
-              '120 Nguyễn Trãi, Thanh Xuân, Hà Nội',
+              addressText ?? addressInfo?.address ?? '-',
               style: St.body16400.copyWith(color: Cl.black),
             ),
           ],

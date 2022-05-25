@@ -13,22 +13,62 @@ class _DeparturePointViewState extends TTState<_DeparturePointModel, _DepartureP
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TTextfield(
+            TTextfield(
               hint: 'Nhập địa điểm của bạn',
-              prefixWidget: Icon(
+              onChanged: model.onSearchChanged,
+              controller: model.controller,
+              suffixWidget: ValueListenableBuilder<bool>(
+                valueListenable: model.isShowClear,
+                builder: (context, isShowClear, _) {
+                  return isShowClear
+                      ? InkWell(
+                          onTap: model.onClear,
+                          child: Image.asset(Id.ic_close),
+                        )
+                      : SizedBox();
+                },
+              ),
+              prefixWidget: const Icon(
                 Icons.search,
                 color: Cl.black,
               ),
             ),
             const SizedBox(height: 10),
-            const TtLocationWidget(
+            const TTLocationWidget(
               title: 'Ví trí của bạn',
+              addressText: '120 Nguyễn Trãi, Thanh Xuân, Hà Nội',
             ),
             const SizedBox(height: 15),
-            Text(
-              'Gợi ý tìm kiếm',
-              style: St.body16600.copyWith(color: Cl.black),
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Text(
+                'Gợi ý tìm kiếm',
+                style: St.body16600.copyWith(color: Cl.black),
+              ),
+            ),
+            const SizedBox(height: 25),
+            Expanded(
+              child: ListView.separated(
+                separatorBuilder: (_, i) => const SizedBox(height: 20),
+                itemCount: model.addresses.length,
+                itemBuilder: (_, i) {
+                  return TTLocationWidget(
+                    addressInfo: model.addresses[i],
+                  );
+                },
+              ),
             )
+            // TtLocationWidget(
+            //   addressInfo: model.address[1],
+            // ),
+            // const SizedBox(height: 20),
+            // TtLocationWidget(
+            //   addressInfo: model.address[1],
+            // ),
+            // const SizedBox(height: 20),
+            // TtLocationWidget(
+            //   addressInfo: model.address[1],
+            // ),
           ],
         ),
       ),

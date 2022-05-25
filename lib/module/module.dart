@@ -5,6 +5,7 @@
 export './contact/contact_public.dart';
 export './delivery/delivery_public.dart';
 export './departure_point/departure_point_public.dart';
+export './destination/destination_public.dart';
 export './discount/discount_public.dart';
 export './forgot_password/forgot_password_public.dart';
 export './home/home_public.dart';

@@ -1,5 +1,6 @@
 library departure_point;
 
+import 'package:aloship/model/model.dart';
 import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

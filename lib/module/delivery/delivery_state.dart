@@ -118,20 +118,20 @@ class _DeliveryViewState extends TTState<_DeliveryModel, _DeliveryView> {
           padding: const EdgeInsets.only(left: 15),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 24),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: model.onDeparturePoint,
-                      child: Image.asset(Id.ic_location),
-                    ),
-                    const SizedBox(width: 17),
-                    Text(
-                      'Vị trí của bạn',
-                      style: St.body14400.copyWith(color: Cl.black),
-                    ),
-                  ],
+              InkWell(
+                onTap: model.onDeparturePoint,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 24),
+                  child: Row(
+                    children: [
+                      Image.asset(Id.ic_location),
+                      const SizedBox(width: 17),
+                      Text(
+                        'Vị trí của bạn',
+                        style: St.body14400.copyWith(color: Cl.black),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 19),
@@ -141,15 +141,18 @@ class _DeliveryViewState extends TTState<_DeliveryModel, _DeliveryView> {
                 color: Cl.clEAEFF1,
               ),
               const SizedBox(height: 19),
-              Row(
-                children: [
-                  Image.asset(Id.ic_destination),
-                  const SizedBox(width: 17),
-                  Text(
-                    'Điểm đến',
-                    style: St.body18600.copyWith(color: Cl.black),
-                  ),
-                ],
+              InkWell(
+                onTap: model.onDestinationPressed,
+                child: Row(
+                  children: [
+                    Image.asset(Id.ic_destination),
+                    const SizedBox(width: 17),
+                    Text(
+                      'Điểm đến',
+                      style: St.body18600.copyWith(color: Cl.black),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 19),
               Container(

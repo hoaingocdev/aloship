@@ -16,20 +16,22 @@ class TTextfield extends StatelessWidget {
   final TextType textType;
   final bool isRequired;
   final Widget? prefixWidget;
+  final Widget? suffixWidget;
 
-  const TTextfield(
-      {Key? key,
-      required this.hint,
-      this.obscureText = false,
-      this.onChanged,
-      this.controller,
-      this.textInputType,
-      this.inputFormatters,
-      this.validator,
-      this.textType = TextType.normal,
-      this.isRequired = false,
-      this.prefixWidget})
-      : super(key: key);
+  const TTextfield({
+    Key? key,
+    required this.hint,
+    this.obscureText = false,
+    this.onChanged,
+    this.controller,
+    this.textInputType,
+    this.inputFormatters,
+    this.validator,
+    this.textType = TextType.normal,
+    this.isRequired = false,
+    this.prefixWidget,
+    this.suffixWidget,
+  }) : super(key: key);
 
   String? validate(String? value) {
     switch (textType) {
@@ -82,6 +84,7 @@ class TTextfield extends StatelessWidget {
         fillColor: Cl.white,
         filled: true,
         prefixIcon: prefixWidget,
+        suffixIcon: suffixWidget,
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Cl.clC4C4C4),
