@@ -1,8 +1,17 @@
+import 'package:aloship/model/model.dart';
 import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';
 
 class TtOrderSpeedWidget extends StatefulWidget {
-  const TtOrderSpeedWidget({Key? key}) : super(key: key);
+  final VoidCallback? onPressed;
+
+  final ServiceInfo serviceInfo;
+
+  const TtOrderSpeedWidget({
+    Key? key,
+    this.onPressed,
+    required this.serviceInfo,
+  }) : super(key: key);
 
   @override
   _TtOrderSpeedWidgetState createState() => _TtOrderSpeedWidgetState();
@@ -29,40 +38,45 @@ class _TtOrderSpeedWidgetState extends State<TtOrderSpeedWidget> {
               ),
             ],
           ),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(21),
-                  child: Image.network(
-                    'https://st.quantrimang.com/photos/image/2021/09/23/AVT-Chibi-10.jpg',
-                    height: 42,
-                    width: 42,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 12),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
+          child: Material(
+            child: InkWell(
+              onTap: widget.onPressed,
+              child: Row(
                 children: [
-                  Text(
-                    'Hoả tốc',
-                    style: St.body14500.copyWith(color: Cl.black),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(21),
+                      child: Image.network(
+                        widget.serviceInfo.imageUrl,
+                        height: 42,
+                        width: 42,
+                      ),
+                    ),
                   ),
-                  Text(
-                    'Giao & nhận trong 25 đến 50 phút',
-                    style: St.body14400.copyWith(color: Cl.black),
+                  const SizedBox(width: 12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        widget.serviceInfo.name,
+                        style: St.body14500.copyWith(color: Cl.black),
+                      ),
+                      Text(
+                        widget.serviceInfo.note,
+                        style: St.body14400.copyWith(color: Cl.black),
+                      ),
+                    ],
                   ),
+                  const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Image.asset(Id.ic_arrow_back_right),
+                  )
                 ],
               ),
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Image.asset(Id.ic_arrow_back_right),
-              )
-            ],
+            ),
           ),
         ),
       ],

@@ -38,9 +38,9 @@ class _OtpViewState extends TTState<_OtpModel, _OtpView> {
               child: TTextfield(
                 hint: 'Mã xác thực',
                 controller: model.otpController,
+                fillColor: Cl.clF3F4F8,
                 onChanged: (v) => model.validate(),
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                textInputType: TextInputType.number,
                 validator: (text) {
                   if (text?.length != 6) {
                     return 'Mã xác thực không hợp lệ';

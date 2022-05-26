@@ -31,6 +31,7 @@ class ForgotPasswordViewState extends TTState<ForgotPasswordModel, ForgotPasswor
                 controller: model.phoneController,
                 textInputType: TextInputType.phone,
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                fillColor: Cl.clF3F4F8,
               ),
             ),
             const SizedBox(height: 131),

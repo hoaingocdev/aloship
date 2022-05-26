@@ -21,6 +21,7 @@ class _RegisterViewState extends TTState<_RegisterModel, _RegisterView> {
                 onChanged: (v) => model.validate(),
                 isRequired: true,
                 textType: TextType.normal,
+                fillColor: Cl.clF3F4F8,
               ),
               const SizedBox(height: 15),
               TTextfield(
@@ -31,6 +32,7 @@ class _RegisterViewState extends TTState<_RegisterModel, _RegisterView> {
                 inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 isRequired: true,
                 textType: TextType.phone,
+                fillColor: Cl.clF3F4F8,
               ),
               const SizedBox(height: 15),
               TTextfield(
@@ -40,6 +42,7 @@ class _RegisterViewState extends TTState<_RegisterModel, _RegisterView> {
                 obscureText: true,
                 isRequired: true,
                 textType: TextType.password,
+                fillColor: Cl.clF3F4F8,
               ),
               const SizedBox(height: 15),
               TTextfield(
@@ -49,6 +52,7 @@ class _RegisterViewState extends TTState<_RegisterModel, _RegisterView> {
                 obscureText: true,
                 isRequired: true,
                 textType: TextType.password,
+                fillColor: Cl.clF3F4F8,
               ),
               const Spacer(),
               TButton(

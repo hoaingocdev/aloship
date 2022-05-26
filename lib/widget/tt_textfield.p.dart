@@ -17,6 +17,8 @@ class TTextfield extends StatelessWidget {
   final bool isRequired;
   final Widget? prefixWidget;
   final Widget? suffixWidget;
+  final bool hasBorder;
+  final Color? fillColor;
 
   const TTextfield({
     Key? key,
@@ -31,6 +33,8 @@ class TTextfield extends StatelessWidget {
     this.isRequired = false,
     this.prefixWidget,
     this.suffixWidget,
+    this.hasBorder = true,
+    this.fillColor,
   }) : super(key: key);
 
   String? validate(String? value) {
@@ -81,13 +85,13 @@ class TTextfield extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: St.body16400.copyWith(color: Cl.cl777777),
-        fillColor: Cl.white,
+        fillColor: fillColor ?? Cl.white,
         filled: true,
         prefixIcon: prefixWidget,
         suffixIcon: suffixWidget,
         contentPadding: const EdgeInsets.symmetric(horizontal: 20),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Cl.clC4C4C4),
+          borderSide: BorderSide(color: hasBorder ? Cl.clC4C4C4 : Colors.transparent),
           borderRadius: BorderRadius.circular(10),
         ),
         errorBorder: OutlineInputBorder(

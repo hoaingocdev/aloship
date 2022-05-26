@@ -39,7 +39,10 @@ class _DeliveryViewState extends TTState<_DeliveryModel, _DeliveryView> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const TtOrderSpeedWidget(),
+                  TtOrderSpeedWidget(
+                    serviceInfo: model.serviceInfo,
+                    onPressed: () => model.onServicePressed(context),
+                  ),
                   const SizedBox(height: 15),
                   Container(
                     width: double.infinity,
@@ -65,23 +68,14 @@ class _DeliveryViewState extends TTState<_DeliveryModel, _DeliveryView> {
                     color: Cl.clEAEFF1,
                   ),
                   const SizedBox(height: 23),
-                  Container(
-                    height: 48,
-                    width: double.infinity,
-                    margin: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Cl.red,
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Xác nhận vị trí',
-                        style: St.body16500.copyWith(
-                          color: Cl.white,
-                        ),
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: TButton(
+                      text: 'Xác nhận vị trí',
+                      onPressed: model.onImformationLine,
                     ),
                   ),
+                  // SizedBox(height: MediaQuery.of(context).padding.bottom + 31)
                 ],
               ),
             ),
