@@ -19,6 +19,8 @@ class TTextfield extends StatelessWidget {
   final Widget? suffixWidget;
   final bool hasBorder;
   final Color? fillColor;
+  final int? maxlines;
+  final EdgeInsetsGeometry? contentPadding;
 
   const TTextfield({
     Key? key,
@@ -35,6 +37,8 @@ class TTextfield extends StatelessWidget {
     this.suffixWidget,
     this.hasBorder = true,
     this.fillColor,
+    this.maxlines,
+    this.contentPadding,
   }) : super(key: key);
 
   String? validate(String? value) {
@@ -81,6 +85,7 @@ class TTextfield extends StatelessWidget {
       controller: controller,
       onChanged: onChanged,
       obscureText: obscureText,
+      maxLines: maxlines,
       cursorColor: Cl.cl777777,
       decoration: InputDecoration(
         hintText: hint,
@@ -89,7 +94,7 @@ class TTextfield extends StatelessWidget {
         filled: true,
         prefixIcon: prefixWidget,
         suffixIcon: suffixWidget,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+        contentPadding: contentPadding ?? const EdgeInsets.symmetric(horizontal: 20),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: hasBorder ? Cl.clC4C4C4 : Colors.transparent),
           borderRadius: BorderRadius.circular(10),
