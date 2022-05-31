@@ -3,6 +3,7 @@
 ///---------------------------------------------------------------
 
 export './contact/contact_public.dart';
+export './create_order/create_order_public.dart';
 export './delivery/delivery_public.dart';
 export './departure_point/departure_point_public.dart';
 export './destination/destination_public.dart';

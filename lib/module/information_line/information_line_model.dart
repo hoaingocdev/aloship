@@ -25,7 +25,7 @@ class _InformationLineModel extends TTChangeNotifier<_InformationLineView> {
     _initData();
   }
   void _initData() {
-    final lsAddress = List.generate(10, (index) {
+    final lsAddress = List.generate(3, (index) {
       return AddressInfo.from({'address': 'address $index'});
     });
     addresses.addAll(lsAddress);
@@ -63,5 +63,10 @@ class _InformationLineModel extends TTChangeNotifier<_InformationLineView> {
     if (!isValid) {
       return;
     }
+    Navigator.of(context!).push(
+      MaterialPageRoute(builder: (_) {
+        return createCreateOrder(addresses);
+      }),
+    );
   }
 }

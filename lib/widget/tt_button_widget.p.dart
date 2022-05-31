@@ -6,14 +6,12 @@ import '../res/style.p.dart';
 class TButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final String text;
-  final Color? borderColor;
   final double? padding;
 
   const TButton({
     Key? key,
     required this.text,
     this.onPressed,
-    this.borderColor,
     this.padding,
   }) : super(key: key);
 
@@ -30,7 +28,6 @@ class TButton extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: padding ?? 15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: borderColor ?? Colors.transparent,
           ),
           child: Center(
             child: Text(

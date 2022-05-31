@@ -9,13 +9,10 @@ class _DeliveryViewState extends TTState<_DeliveryModel, _DeliveryView> {
           Container(
             height: MediaQuery.of(context).size.height - 409 + 24,
             color: Colors.green,
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 36, left: 25),
-                child: Image.asset(Id.ic_arrow_back),
-              ),
-            ),
+          ),
+          TTButtonWidget(
+            onPressed: model.onBackPressed,
+            top: MediaQuery.of(context).padding.top + 36 - 15,
           ),
           Align(
             alignment: Alignment.bottomCenter,

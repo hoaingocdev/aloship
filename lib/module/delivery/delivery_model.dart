@@ -26,4 +26,8 @@ class _DeliveryModel extends TTChangeNotifier<_DeliveryView> {
       MaterialPageRoute(builder: (_) => createInformationLine()),
     );
   }
+
+  void onBackPressed() {
+    Navigator.of(context!).pop();
+  }
 }
