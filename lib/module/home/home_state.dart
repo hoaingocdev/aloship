@@ -1,9 +1,16 @@
 part of home;
 
+final GlobalKey<ScaffoldState> homeKey = GlobalKey();
+
 class _HomeViewState extends TTState<_HomeModel, _HomeView> {
   @override
   Widget buildWithModel(BuildContext context, _HomeModel model) {
     return Scaffold(
+      key: homeKey,
+      endDrawer: MenuWidget(
+        onPressed: model.onLogoutPressed,
+        onTap: model.onClosePressed,
+      ),
       body: buildBody(model),
       bottomNavigationBar: buildBottom(model),
     );

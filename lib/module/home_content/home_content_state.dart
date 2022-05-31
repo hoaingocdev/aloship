@@ -3,65 +3,41 @@ part of home_content;
 class _HomeContentViewState extends TTState<_HomeContentModel, _HomeContentView> {
   @override
   Widget buildWithModel(BuildContext context, _HomeContentModel model) {
-    return Scaffold(
-      body: SizedBox(
-        height: double.infinity,
-        child: Stack(
-          children: [
-            SizedBox(
-              height: 367,
-              child: Image.asset(
-                Id.ic_background_home,
-                fit: BoxFit.cover,
-              ),
+    return SizedBox(
+      height: double.infinity,
+      child: Stack(
+        children: [
+          SizedBox(
+            height: 367,
+            child: Image.asset(
+              Id.ic_background_home,
+              fit: BoxFit.cover,
             ),
-            Positioned.fill(
-              child: CustomScrollView(
-                slivers: [
-                  buildInfo(),
-                  builPage(height: 41),
-                  buidWallet(),
-                  builPage(height: 54),
-                  buildService(),
-                  builPage(height: 20),
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 19),
-                      child: Text(
-                        'Ưu đãi dành cho bạn',
-                        style: St.body22600.copyWith(color: Cl.black),
-                      ),
+          ),
+          Positioned.fill(
+            child: CustomScrollView(
+              slivers: [
+                buildInfo(),
+                builPage(height: 41),
+                buidWallet(),
+                builPage(height: 54),
+                buildService(),
+                builPage(height: 20),
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 19),
+                    child: Text(
+                      'Ưu đãi dành cho bạn',
+                      style: St.body22600.copyWith(color: Cl.black),
                     ),
                   ),
-                  builPage(height: 28),
-                  buildListDiscount(),
-                ],
-              ),
+                ),
+                builPage(height: 28),
+                buildListDiscount(),
+              ],
             ),
-            // SingleChildScrollView(
-            //   child: Column(
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: [
-            //       buildInfo(),
-            //       const SizedBox(height: 41),
-            //       buidWallet(),
-            //       const SizedBox(height: 54),
-            //       buildService(),
-            //       const SizedBox(height: 20),
-            //       Padding(
-            //         padding: const EdgeInsets.only(left: 19),
-            //         child: Text(
-            //           'Ưu đãi dành cho bạn',
-            //           style: St.body22600.copyWith(color: Cl.black),
-            //         ),
-            //       ),
-            //       const SizedBox(height: 28),
-            //       buildDiscount(),
-            //     ],
-            //   ),
-            // ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -116,7 +92,17 @@ class _HomeContentViewState extends TTState<_HomeContentModel, _HomeContentView>
             const Spacer(),
             Padding(
               padding: const EdgeInsets.all(19),
-              child: Image.asset(Id.ic_menu_left),
+              child: Builder(
+                builder: (context) {
+                  return Material(
+                    color: Colors.transparent,
+                    child: IconButton(
+                      onPressed: () => homeKey.currentState!.openEndDrawer(),
+                      icon: Image.asset(Id.ic_menu_left),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),

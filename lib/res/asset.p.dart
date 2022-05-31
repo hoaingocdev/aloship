@@ -7,6 +7,7 @@
 class Id {
   Id._();
 
+  static const String ic_acttention = 'assets/images/ic_acttention.png';
   static const String ic_arrow_back = 'assets/images/ic_arrow_back.png';
   static const String ic_arrow_back_right = 'assets/images/ic_arrow_back_right.png';
   static const String ic_background_home = 'assets/images/ic_background_home.png';
@@ -21,6 +22,8 @@ class Id {
   static const String ic_location = 'assets/images/ic_location.png';
   static const String ic_location1 = 'assets/images/ic_location1.png';
   static const String ic_location3 = 'assets/images/ic_location3.png';
+  static const String ic_lock = 'assets/images/ic_lock.png';
+  static const String ic_logout = 'assets/images/ic_logout.png';
   static const String ic_menu_left = 'assets/images/ic_menu-left.png';
   static const String ic_motor_scooter = 'assets/images/ic_motor_scooter.png';
   static const String ic_note = 'assets/images/ic_note.png';
@@ -28,8 +31,10 @@ class Id {
   static const String ic_taxi = 'assets/images/ic_taxi.png';
   static const String ic_telephone = 'assets/images/ic_telephone.png';
   static const String ic_truck_fast = 'assets/images/ic_truck_fast.png';
+  static const String ic_user = 'assets/images/ic_user.png';
   static const String ic_vector = 'assets/images/ic_vector.png';
   static const String ic_wallet = 'assets/images/ic_wallet.png';
+  static const String ic_watch = 'assets/images/ic_watch.png';
   static const String img_background = 'assets/images/img_background.png';
   static const String img_logo = 'assets/images/img_logo.png';
   static const String img_logo_min = 'assets/images/img_logo_min.png';

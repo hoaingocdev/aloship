@@ -13,4 +13,10 @@ class _HomeModel extends TTChangeNotifier<_HomeView> {
       notifyListeners();
     }
   }
+
+  void onLogoutPressed() {}
+
+  void onClosePressed() {
+    Navigator.of(context!).pop();
+  }
 }
