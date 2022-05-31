@@ -1,11 +1,11 @@
 library home;
 
+import 'package:aloship/module/notification/notification_public.dart';
 import 'package:aloship/res/res.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:aloship/widget/widget.dart';
 
-import '../discount/discount_public.dart';
 import '../module.dart';
 
 part 'home_view.dart';

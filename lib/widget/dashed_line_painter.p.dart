@@ -1,4 +1,5 @@
-part of delivery;
+import 'package:aloship/res/res.dart';
+import 'package:flutter/material.dart';
 
 class DashedLineVerticalPainter extends CustomPainter {
   @override

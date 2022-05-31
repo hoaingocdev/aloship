@@ -9,7 +9,6 @@ import 'package:aloship/widget/widget.dart';
 part 'discount_view.dart';
 part 'discount_model.dart';
 part 'discount_state.dart';
-part 'widget/dashed_line_painter.dart';
 
 ChangeNotifierProvider<_DiscountModel> createDiscount() {
   return ChangeNotifierProvider<_DiscountModel>(

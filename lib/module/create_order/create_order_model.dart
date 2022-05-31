@@ -15,5 +15,7 @@ class _CreateOrderModel extends TTChangeNotifier<_CreateOrderView> {
     'note': 'Giao & nhận trong 25 đến 50 phút'
   });
 
-  void onFindDriver() {}
+  void onFindDriver() {
+    showSearchLoadingDialog(context!);
+  }
 }

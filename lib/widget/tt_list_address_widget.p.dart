@@ -1,6 +1,6 @@
 import 'package:aloship/model/model.dart';
-import 'package:aloship/module/module.dart';
 import 'package:aloship/res/res.dart';
+import 'package:aloship/widget/widget.dart';
 import 'package:flutter/material.dart';
 
 class TTListAddressWidget extends StatelessWidget {
