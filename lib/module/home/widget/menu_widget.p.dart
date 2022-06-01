@@ -1,9 +1,11 @@
 part of home;
 
 class MenuWidget extends StatelessWidget {
-  final VoidCallback? onPressed;
-  final VoidCallback? onTap;
-  const MenuWidget({Key? key, this.onPressed, this.onTap}) : super(key: key);
+  final VoidCallback? onLogoutPressed;
+  final VoidCallback? onCloseTap;
+  final VoidCallback? onHistoryPressed;
+
+  const MenuWidget({Key? key, this.onCloseTap, this.onHistoryPressed, this.onLogoutPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,31 +20,37 @@ class MenuWidget extends StatelessWidget {
               hasIcon: false,
               actions: [
                 InkWell(
-                  onTap: onTap,
+                  onTap: onCloseTap,
                   child: Image.asset(Id.ic_close),
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 21),
+          // const SizedBox(height: 21),
           buildMenuItem(
+            context,
             name: 'Thông tin cá nhân',
             imageAsset: Id.ic_user,
           ),
           buildMenuItem(
+            context,
+            onPressed: onHistoryPressed,
             name: 'Lịch sử vận chuyển',
             imageAsset: Id.ic_watch,
           ),
           buildMenuItem(
+            context,
             name: 'Ví của tôi',
             imageAsset: Id.ic_wallet,
             money: '240.000 đ',
           ),
           buildMenuItem(
+            context,
             name: 'Đổi mật khẩu',
             imageAsset: Id.ic_lock,
           ),
           buildMenuItem(
+            context,
             name: 'Điều khoản chính sách',
             imageAsset: Id.ic_acttention,
           ),
@@ -52,7 +60,7 @@ class MenuWidget extends StatelessWidget {
             child: TButton(
               text: 'Đăng xuất',
               icon: Id.ic_logout,
-              onPressed: onPressed,
+              onPressed: onLogoutPressed,
             ),
           )
         ],
@@ -60,36 +68,45 @@ class MenuWidget extends StatelessWidget {
     );
   }
 
-  Widget buildMenuItem({
+  Widget buildMenuItem(
+    BuildContext context, {
     required String name,
     required String imageAsset,
     String? money,
+    VoidCallback? onPressed,
   }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Image.asset(imageAsset),
-              const SizedBox(width: 10),
-              Text(
-                name,
-                style: St.body18500.copyWith(color: Cl.black),
-              ),
-              const Spacer(),
-              Text(
-                money ?? '',
-                style: St.body16500.copyWith(color: Cl.red),
-              )
-            ],
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 17, bottom: 20),
-            height: 1,
-            color: Cl.clEAEFF1,
-          )
-        ],
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).pop();
+        onPressed?.call();
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: Column(
+          children: [
+            const SizedBox(height: 21),
+            Row(
+              children: [
+                Image.asset(imageAsset),
+                const SizedBox(width: 10),
+                Text(
+                  name,
+                  style: St.body18500.copyWith(color: Cl.black),
+                ),
+                const Spacer(),
+                Text(
+                  money ?? '',
+                  style: St.body16500.copyWith(color: Cl.red),
+                )
+              ],
+            ),
+            Container(
+              margin: const EdgeInsets.only(top: 18),
+              height: 1,
+              color: Cl.clEAEFF1,
+            ),
+          ],
+        ),
       ),
     );
   }

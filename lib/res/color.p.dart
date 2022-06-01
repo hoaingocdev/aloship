@@ -18,4 +18,7 @@ class Cl {
   static const Color cl333333 = Color(0Xff333333);
   static const Color clEAEFF1 = Color(0XffEAEFF1);
   static const Color clF3F4F8 = Color(0XffF3F4F8);
+  static const Color clFF00000D = Color(0X0DFF0000);
+  static const Color cl2A9400 = Color(0Xff2A9400);
+  static const Color clFF0000 = Color(0XffFF0000);
 }

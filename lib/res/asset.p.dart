@@ -36,6 +36,7 @@ class Id {
   static const String ic_wallet = 'assets/images/ic_wallet.png';
   static const String ic_watch = 'assets/images/ic_watch.png';
   static const String img_background = 'assets/images/img_background.png';
+  static const String img_distance = 'assets/images/img_distance.png';
   static const String img_logo = 'assets/images/img_logo.png';
   static const String img_logo_min = 'assets/images/img_logo_min.png';
   static const String img_person = 'assets/images/img_person.png';

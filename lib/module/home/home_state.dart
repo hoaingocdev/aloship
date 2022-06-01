@@ -8,8 +8,9 @@ class _HomeViewState extends TTState<_HomeModel, _HomeView> {
     return Scaffold(
       key: homeKey,
       endDrawer: MenuWidget(
-        onPressed: model.onLogoutPressed,
-        onTap: model.onClosePressed,
+        onLogoutPressed: model.onLogoutPressed,
+        onCloseTap: model.onClosePressed,
+        onHistoryPressed: model.onHistoryPressed,
       ),
       body: buildBody(model),
       bottomNavigationBar: buildBottom(model),

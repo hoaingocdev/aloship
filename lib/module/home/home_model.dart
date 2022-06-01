@@ -19,4 +19,14 @@ class _HomeModel extends TTChangeNotifier<_HomeView> {
   void onClosePressed() {
     Navigator.of(context!).pop();
   }
+
+  void onHistoryPressed() {
+    Navigator.of(context!).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return createShippingHistory();
+        },
+      ),
+    );
+  }
 }

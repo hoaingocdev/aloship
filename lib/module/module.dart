@@ -23,3 +23,4 @@ export './otp/otp_public.dart';
 export './register/register_public.dart';
 export './search_loading/search_loading_public.dart';
 export './service/service_public.dart';
+export './shipping_history/shipping_history_public.dart';
