@@ -21,10 +21,6 @@ class _OtpModel extends TTChangeNotifier<_OtpView> {
     notifyListeners();
   }
 
-  void onBackPressed() {
-    Navigator.of(context!).pop();
-  }
-
   void onCompletePressed() {
     if (otpFlow == OtpFlow.forgotPassword) {
       bool isValid = formKey.currentState?.validate() ?? false;

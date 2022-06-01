@@ -21,6 +21,7 @@ class TTextfield extends StatelessWidget {
   final Color? fillColor;
   final int? maxlines;
   final EdgeInsetsGeometry? contentPadding;
+  final bool enabled;
 
   const TTextfield({
     Key? key,
@@ -39,6 +40,7 @@ class TTextfield extends StatelessWidget {
     this.fillColor,
     this.maxlines,
     this.contentPadding,
+    this.enabled = true,
   }) : super(key: key);
 
   String? validate(String? value) {
@@ -79,6 +81,7 @@ class TTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      enabled: enabled,
       validator: validator ?? validate,
       keyboardType: textInputType,
       inputFormatters: inputFormatters,
@@ -95,6 +98,10 @@ class TTextfield extends StatelessWidget {
         prefixIcon: prefixWidget,
         suffixIcon: suffixWidget,
         contentPadding: contentPadding ?? const EdgeInsets.symmetric(horizontal: 20),
+        disabledBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(10),
+        ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: hasBorder ? Cl.clC4C4C4 : Colors.transparent),
           borderRadius: BorderRadius.circular(10),

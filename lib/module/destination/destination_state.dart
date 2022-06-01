@@ -5,9 +5,9 @@ class _DestinationViewState extends TTState<_DestinationModel, _DestinationView>
   Widget buildWithModel(BuildContext context, _DestinationModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
+        context: context,
         title: 'Điểm đến',
         hasIcon: true,
-        onBackPressed: model.onBackPressed,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

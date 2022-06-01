@@ -20,6 +20,7 @@ export './new_password/new_password_public.dart';
 export './notification/notification_public.dart';
 export './notification_dialog/notification_dialog_public.dart';
 export './otp/otp_public.dart';
+export './personal/personal_public.dart';
 export './register/register_public.dart';
 export './search_loading/search_loading_public.dart';
 export './service/service_public.dart';

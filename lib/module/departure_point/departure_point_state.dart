@@ -5,8 +5,8 @@ class _DeparturePointViewState extends TTState<_DeparturePointModel, _DepartureP
   Widget buildWithModel(BuildContext context, _DeparturePointModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
+        context: context,
         title: 'Điểm đi',
-        onBackPressed: model.onBackPressed,
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 15, top: 22),

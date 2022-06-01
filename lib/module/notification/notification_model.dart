@@ -17,8 +17,6 @@ class _NotificationModel extends TTChangeNotifier<_NotificationView> {
     notifications.addAll(lsNotification);
   }
 
-  void onBackPressed() {}
-
   void onNotificationItem(int index) {
     notifications[index].read();
     notifyListeners();

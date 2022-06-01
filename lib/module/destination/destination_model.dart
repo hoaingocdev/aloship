@@ -39,8 +39,4 @@ class _DestinationModel extends TTChangeNotifier<_DestinationView> {
     isShowClear.value = false;
     notifyListeners();
   }
-
-  void onBackPressed() {
-    Navigator.of(context!).pop();
-  }
 }

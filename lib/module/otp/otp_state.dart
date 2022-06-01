@@ -5,8 +5,8 @@ class _OtpViewState extends TTState<_OtpModel, _OtpView> {
   Widget buildWithModel(BuildContext context, _OtpModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
+        context: context,
         title: ' Xác thực tài khoản',
-        onBackPressed: model.onBackPressed,
       ),
       body: Form(
         key: model.formKey,

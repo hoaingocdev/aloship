@@ -5,8 +5,8 @@ class ForgotPasswordViewState extends TTState<ForgotPasswordModel, ForgotPasswor
   Widget buildWithModel(BuildContext context, ForgotPasswordModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
+        context: context,
         title: 'Quên mật khẩu',
-        onBackPressed: model.onBackPressed,
       ),
       body: Form(
         key: model.formKey,

@@ -5,14 +5,16 @@ class TButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final String text;
   final double? padding;
-  final String? icon;
+  final bool hasIcon;
+  final bool? isSelected;
 
   const TButton({
     Key? key,
     required this.text,
     this.onPressed,
     this.padding,
-    this.icon,
+    this.hasIcon = false,
+    this.isSelected = true,
   }) : super(key: key);
 
   @override
@@ -32,8 +34,10 @@ class TButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(icon ?? ''),
-              const SizedBox(width: 10),
+              if (hasIcon) ...[
+                Image.asset(Id.ic_logout),
+                const SizedBox(width: 10),
+              ],
               Text(
                 text,
                 style: St.body16500.copyWith(color: Cl.white),

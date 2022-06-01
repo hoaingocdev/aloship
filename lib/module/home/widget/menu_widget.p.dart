@@ -4,8 +4,15 @@ class MenuWidget extends StatelessWidget {
   final VoidCallback? onLogoutPressed;
   final VoidCallback? onCloseTap;
   final VoidCallback? onHistoryPressed;
+  final VoidCallback? onPersonalPressed;
 
-  const MenuWidget({Key? key, this.onCloseTap, this.onHistoryPressed, this.onLogoutPressed}) : super(key: key);
+  const MenuWidget({
+    Key? key,
+    this.onCloseTap,
+    this.onHistoryPressed,
+    this.onLogoutPressed,
+    this.onPersonalPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +23,7 @@ class MenuWidget extends StatelessWidget {
             width: 320,
             color: Cl.white,
             child: TTAppBar.create(
+              context: context,
               title: 'Tài khoản',
               hasIcon: false,
               actions: [
@@ -29,6 +37,7 @@ class MenuWidget extends StatelessWidget {
           // const SizedBox(height: 21),
           buildMenuItem(
             context,
+            onPressed: onPersonalPressed,
             name: 'Thông tin cá nhân',
             imageAsset: Id.ic_user,
           ),
@@ -59,7 +68,7 @@ class MenuWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 31),
             child: TButton(
               text: 'Đăng xuất',
-              icon: Id.ic_logout,
+              hasIcon: true,
               onPressed: onLogoutPressed,
             ),
           )

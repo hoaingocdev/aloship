@@ -5,8 +5,8 @@ class _NewPasswordViewState extends TTState<_NewPasswordModel, _NewPasswordView>
   Widget buildWithModel(BuildContext context, _NewPasswordModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
+        context: context,
         title: 'Quên mật khẩu',
-        onBackPressed: model.onBackPressed,
       ),
       body: Form(
         key: model.formKey,

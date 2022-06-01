@@ -29,4 +29,14 @@ class _HomeModel extends TTChangeNotifier<_HomeView> {
       ),
     );
   }
+
+  void onPersonalPressed() {
+    Navigator.of(context!).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return createPersonal();
+        },
+      ),
+    );
+  }
 }

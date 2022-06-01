@@ -14,10 +14,6 @@ class _DeparturePointModel extends TTChangeNotifier<_DeparturePointView> {
     super.dispose();
   }
 
-  void onBackPressed() {
-    Navigator.of(context!).pop();
-  }
-
   void onSearchChanged(String value) {
     if (value.isEmpty) {
       isShowClear.value = false;

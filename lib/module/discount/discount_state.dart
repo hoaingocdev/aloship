@@ -5,8 +5,8 @@ class _DiscountViewState extends TTState<_DiscountModel, _DiscountView> {
   Widget buildWithModel(BuildContext context, _DiscountModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
+        context: context,
         title: 'Ưu đãi',
-        onBackPressed: model.onBackPressed,
         actions: [
           Image.asset(
             Id.ic_menu_left,

@@ -5,9 +5,8 @@ class _RegisterViewState extends TTState<_RegisterModel, _RegisterView> {
   Widget buildWithModel(BuildContext context, _RegisterModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
+        context: context,
         title: 'Đăng ký',
-        onBackPressed: model.onBackPressed,
-        image: Id.ic_arrow_back,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),

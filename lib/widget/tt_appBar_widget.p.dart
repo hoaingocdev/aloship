@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class TTAppBar {
   static PreferredSizeWidget create({
+    required BuildContext context,
     String? title,
     List<Widget>? actions,
     VoidCallback? onBackPressed,
-    String? image,
     bool hasIcon = true,
   }) {
     return AppBar(
@@ -17,9 +17,12 @@ class TTAppBar {
         style: St.body18500.copyWith(color: Cl.black),
       ),
       leading: hasIcon
-          ? InkWell(
-              onTap: onBackPressed,
-              child: Image.asset(Id.ic_arrow_back),
+          ? IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                onBackPressed?.call();
+              },
+              icon: Image.asset(Id.ic_arrow_back),
             )
           : null,
       actions: actions,

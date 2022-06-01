@@ -16,10 +16,6 @@ class ForgotPasswordModel extends TTChangeNotifier<ForgotPasswordView> {
     notifyListeners();
   }
 
-  void onBackPressed() {
-    Navigator.of(context!).pop();
-  }
-
   void onContinuePressed() {
     bool isValid = formKey.currentState?.validate() ?? false;
     if (!isValid) {

@@ -17,6 +17,4 @@ class _DiscountModel extends TTChangeNotifier<_DiscountView> {
     });
     discounts.addAll(lsDiscount);
   }
-
-  void onBackPressed() {}
 }

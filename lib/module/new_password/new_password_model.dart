@@ -21,10 +21,6 @@ class _NewPasswordModel extends TTChangeNotifier<_NewPasswordView> {
     notifyListeners();
   }
 
-  void onBackPressed() {
-    Navigator.of(context!).pop();
-  }
-
   void onCompletedPressed() {
     bool isValid = formKey.currentState?.validate() ?? false;
     if (!isValid) {

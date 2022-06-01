@@ -5,8 +5,8 @@ class _NotificationViewState extends TTState<_NotificationModel, _NotificationVi
   Widget buildWithModel(BuildContext context, _NotificationModel model) {
     return Scaffold(
       appBar: TTAppBar.create(
+        context: context,
         title: 'Thông báo',
-        onBackPressed: model.onBackPressed,
         hasIcon: false,
         actions: [
           Image.asset(Id.ic_menu_left),

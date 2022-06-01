@@ -11,6 +11,7 @@ class _HomeViewState extends TTState<_HomeModel, _HomeView> {
         onLogoutPressed: model.onLogoutPressed,
         onCloseTap: model.onClosePressed,
         onHistoryPressed: model.onHistoryPressed,
+        onPersonalPressed: model.onPersonalPressed,
       ),
       body: buildBody(model),
       bottomNavigationBar: buildBottom(model),

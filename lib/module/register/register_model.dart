@@ -41,8 +41,4 @@ class _RegisterModel extends TTChangeNotifier<_RegisterView> {
       ),
     );
   }
-
-  void onBackPressed() {
-    Navigator.of(context!).pop();
-  }
 }

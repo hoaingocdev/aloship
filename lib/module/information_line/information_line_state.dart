@@ -4,7 +4,10 @@ class _InformationLineViewState extends TTState<_InformationLineModel, _Informat
   @override
   Widget buildWithModel(BuildContext context, _InformationLineModel model) {
     return Scaffold(
-      appBar: TTAppBar.create(title: 'Thông tin đơn giao', onBackPressed: model.onBackPressed),
+      appBar: TTAppBar.create(
+        context: context,
+        title: 'Thông tin đơn giao',
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(
           horizontal: 15,

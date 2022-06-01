@@ -7,6 +7,7 @@ class _ShippingHistoryViewState extends TTState<_ShippingHistoryModel, _Shipping
       length: 3,
       child: Scaffold(
         appBar: TTAppBar.create(
+          context: context,
           title: 'Lịch sử vận chuyển',
         ),
         body: Padding(

@@ -47,10 +47,6 @@ class _InformationLineModel extends TTChangeNotifier<_InformationLineView> {
 
   void onApplyPressed() {}
 
-  void onBackPressed() {
-    Navigator.of(context!).pop();
-  }
-
   void onPaymentMethodChanged(PaymentMethod? value) {
     if (value == null) {
       return;
